@@ -17,6 +17,4 @@ import { TaskFormModalComponent } from './components/task-form-modal/task-form-m
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'projeto-go-task';
-}
+export class AppComponent {}
