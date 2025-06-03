@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TaskService } from '../../services/task.service';
 import { TaskCardComponent } from '../task-card/task-card.component';
 
 @Component({
@@ -7,4 +8,12 @@ import { TaskCardComponent } from '../task-card/task-card.component';
   templateUrl: './task-list-section.component.html',
   styleUrl: './task-list-section.component.css',
 })
-export class TaskListSectionComponent {}
+export class TaskListSectionComponent {
+  private readonly _taskService = inject(TaskService);
+
+  ngOnInit() {
+    this._taskService.todoTasks.subscribe((todoList) => {
+      console.log('Lista de TODOS: ', todoList);
+    });
+  }
+}
